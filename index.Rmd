@@ -1,76 +1,94 @@
 ---
-title: "De l'open data au big data"
+title: "Open data"
 subtitle: "Culture générale des données"
-author: "Samuel Goëta et Joël Gombin"
-date: "Ynov Aix, 23 octobre 2019"
+author: "Samuel Goëta, Joël Gombin, Mathieu Morey"
+date: "octobre 2019"
 output:
-  xaringan::moon_reader:
-    seal: false
-    css: [default, xaringan.css]
+  SlidesDatactivist::moon_reader:
+    css: [default, datactivist, datactivist-fonts]
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+params:
+  event: "Ynov Aix"
+  slug: cours-opendata-ynov/
+---
+
+layout: true
+  
+
+`r paste0("<div class='my-footer'><span>", params$event, "</span> <center><div class=logo><img src='https://github.com/datactivist/slides_datactivist/raw/master/inst/rmarkdown/templates/xaringan/resources/img/fond_noir_monochrome.png' width='100px'></center></span></div>")` 
 
 ---
-class: center, middle
-background-image: url(./img/seurat.jpg)
-background-size: cover
-background-position: 50% 50%
 
-# De l'open data au big data
-## Culture générale des données
-<BR><BR><BR>
-## Samuel Goëta et Joël Gombin (Datactivist)
-
-### Ynov Aix, 23 octobre 2019
-
----
 class: center, middle
 
-Ces slides en ligne (bientôt) : http://datactivist.coop/cours-opendata-ynov/
+Ces slides en ligne : `r paste0("http://moreymat.github.io/", params$slug)`
 
-Sources : https://github.com/moreymat/cours-opendata-ynov
+Sources : `r paste0("https://github.com/moreymat/", params$slug)`
+
 
 Les productions de Datactivist sont librement réutilisables selon les termes de la licence [Creative Commons 4.0 BY-SA](https://creativecommons.org/licenses/by-sa/4.0/legalcode.fr).
 
-<img src="./img/Logo_DATACTIVIST_TW.png" height="150px" />
+<BR>
+<BR>
+
+![](https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png)
 
 
 ---
-class: middle, center
+## Qui sommes-nous ?
 
-# Jour 1 : 
-# comprendre l’écosystème des données
+<BR><BR><BR><BR>
 
+[![](https://github.com/datactivist/slides_datactivist/raw/master/inst/rmarkdown/templates/xaringan/resources/img/logo.png)](https://datactivist.coop)
 
----
-class:middle
-# Programme de la matinée
-
-Workshop 1 — Qu’est ce qu’une donnée ? Exercice d’identification, définition et étymologie du terme
-
-Petite histoire sociale des données et de leur exploitation
-
-Datafication : les promesses de la mise en données du monde
-
-Données, données… quelles données ? Quantitatives, qualitatives, structurées, non structurées, capturées, échappées, dérivées…
-
-Open data, big data, linked data, data API : les habits neufs de la donnée
+### We .red[open data], we make them .red[useful]
 
 ---
-class:middle
-# Programme de l'après-midi
+## Qui sommes-nous ?
 
-Poursuite de "Open data, big data, linked data, data API : les habits neufs de la donnée
-"
 
-Cadre juridique et protection de la vie privée
+![](https://www.dropbox.com/s/kicm8kmqal303yc/equipe.jpg?dl=1)
 
-Modèles économiques de l’open data et du big data
+---
+## Qui sommes-nous ?
 
-Workshop 3 — analyse du modèle économique d’entreprises de la data
+- Datactivist est un .red[**pure player de l’open data**] créé en 2016, par Samuel Goëta et Joël Gombin.
+
+- Se positionnant sur .red[**toutes les étapes du travail d’ouverture des données**], Datactivist travaille tant avec les producteurs de données qu’avec les réutilisateurs et participe à l’appropriation des données par chacun.
+
+- Nous appliquons nos propres .red[**valeurs**] : nous sommes une coopérative ; nos supports de formation et nos contenus sont librement réutilisables, publiés en licence Creative Commons.
+
+- Une approche issue de la recherche : voir notamment **https://datactivist.coop/these**. 
+
+- Nous animons la communauté [#TeamOpenData](https://teamopendata.org).
+
+---
+## Nos activités
+
+- Conseil sur les .red[**stratégies d’ouverture de données**] : nous aidons les organisations dans la conception et la mise en œuvre de leur stratégie d’ouverture de données.
+
+
+- .red[**Accompagnement dans la réutilisation de données ouvertes**] : nous aidons les organisations à utiliser les données au quotidien. 
+
+- .red[**Sensibilisation et formation à la donnée**] : nous formons à la culture générale des données, nous enseignons les grands principes et bonnes pratiques de l'open data et nous introduisons à la data science. 
+
+- .red[**Médiation de données**] : nous organisons des hackathons, des open data camps, des expéditions de données...
+
+???
+
+La médiation de données est aussi fondamentalement une animation de communauté(s). 
+
+---
+## Plan du cours
+
+**23/10** : culture des données. Data, big data, open data. Pratique.
+
+**31/10** : Pratique. Données sales. Données non structurées. Étude de cas (data pipeline).
+
 ---
 class:middle, center
 ## Echauffement : 5 minutes, 20 données
@@ -110,22 +128,23 @@ class:center,inverse, middle
 .pull-right[![center](./img/desrosieres1.jpg)]
 ---
   
-## [Quantifier, c'est convenir puis mesurer](http://www.pressesdesmines.com/media/extrait/PourSocioHistExtr.pdf)
+## [Quantifier, c'est convenir puis mesurer](https://www.pressesdesmines.com/wp-content/uploads/2011/01/PourSocioHistExtr.pdf)
 
 .pull-left[
 > Le verbe quantifier est employé ici dans un sens large : **exprimer et
 faire exister sous une forme numérique ce qui, auparavant, était exprimé par
-des mots et non par des nombres**.]
-
-.pull-right[![ ](img/desrosi.jpeg)]
----
-## [Quantifier, c'est convenir puis mesurer](http://www.pressesdesmines.com/media/extrait/PourSocioHistExtr.pdf)
-
-.middle.reduite3[
-![](img/asterix2.png)
+des mots et non par des nombres**.
 ]
 
+.pull-right[![ ](img/desrosi.jpeg)]
+
+---
+## [Quantifier, c'est convenir puis mesurer](https://www.pressesdesmines.com/wp-content/uploads/2011/01/PourSocioHistExtr.pdf)
+
+.middle.reduite3[![](img/asterix2.png)]
+
 .footnote[*Asterix chez les pictes*, © Albert René 2013]
+
 ---
 ## Quantifier, c'est inscrire et figer une réalité sans cesse mouvante
 .reduite2[![](img/asterix3.png)]
@@ -146,17 +165,18 @@ consideration of corresponding ontological truth. When a fact is proven false, i
 to be a fact. False data is data nonetheless.
 
 .footnote[[Rosenberg, 2013](https://mitpress.mit.edu/books/raw-data-oxymoron)]
+
 ---
-class:middle
 ## Usage de "data"
 
-.pull-left[
 Le sens moderne apparaît à la fin du 18e siècle. 
 
-Renvoie à des expériences, des collectes d'éléments.]
-.pull-right[![](img/data.png)]
+Renvoie à des expériences, des collectes d'éléments.
+
+.reduite[![](img/data.png)]
+
 ---
-# “Datafication” : la mise en données du monde
+## “Datafication” : la mise en données du monde
 > “L'immense gisement de données numériques découle de la capacité à paramétrer des aspects du monde et de la vie humaine qui n'avaient encore jamais été quantifiés. On peut qualifier ce processus de **« mise en données » (datafication)**. 
 
 > […] “La mise en données désigne autre chose que la numérisation, laquelle consiste à traduire un contenu analogique - texte, film, photographie - en une séquence de 1 et de 0 lisible par un ordinateur. Elle se réfère à une action bien plus vaste, et aux implications encore insoupçonnées : **numériser non plus des documents, mais tous les aspects de la vie**.”
@@ -164,7 +184,7 @@ Renvoie à des expériences, des collectes d'éléments.]
 .footnote[[Kenneth Cukier, “Mise en données du monde, le déluge numérique”](https://www.monde-diplomatique.fr/2013/07/CUKIER/49318)]
 ---
 
-# La "nombrification" du monde
+## La "nombrification" du monde
 .pull-left[![](https://cefres.hypotheses.org/files/2017/06/couv_REY.jpg)]
 .pull-right[
 > La numérisation ne serait pas survenue sans une "nombrification" préalable qui consiste à quantifier de plus en plus d'aspects de notre expérience du réel.
@@ -176,8 +196,8 @@ Renvoie à des expériences, des collectes d'éléments.]
 > Personne ne saurait parler sérieusement de l'état de la société et discuter politique sans se référer aux informations quantitatives. ]
 
 ---
-class:middle
-# Le nouveau positivisme des données
+## Le nouveau positivisme des données
+
 > *If you asked me to describe the rising philosophy of the day, I’d say it is **data-ism**. 
 We now have the ability to gather huge amounts of data. 
 This ability seems to carry with it certain cultural assumptions — that everything that can be measured should be measured; that data is a transparent and reliable lens that allows us to filter out emotionalism and ideology; that data will help us do remarkable things — like foretell the future.*
@@ -187,36 +207,35 @@ Jeff Brookes, éditorialiste du New York Times
 
 ---
 ## Aux sources de la mise en données du monde
+
 .pull-left[
 - Rencontre, dans la Californie des années 1960, entre la Nouvelle Gauche et les Nouveaux Communalistes sur fond de LSD et de recherche militaire
 
-
 - L'inspiration de la cybernétique (N. Wiener) : objets techniques et êtres humains constituent un même système sociotechhnique, régulé par l'information
 
-
 - Exemple de Steward Brand, fondateur du _Whole Earth Catalog_ puis de Wired => ["Forest Gump de l'Internet"](https://questionsdecommunication.revues.org/8619)]
-.pull-right[
-![ ](./img/wholeearthcatalog.jpg)]
+.pull-right[![](./img/wholeearthcatalog.jpg)]
 
 ---
 ## "Raw data" is an oxymoron
+
 .pull-left[
 > Data are always already “cooked” and never entirely “raw.”
 
-> Data need to be imagined _as_ data to exist and function as such, and the imagination of data entails an interpretive base.]
+> Data need to be imagined _as_ data to exist and function as such, and the imagination of data entails an interpretive base.
 
-.pull-right[
-![](https://mitpress.mit.edu/sites/default/files/styles/large_book_cover/http/mitp-content-server.mit.edu%3A18180/books/covers/cover/%3Fcollid%3Dbooks_covers_0%26isbn%3D9780262518284%26type%3D.jpg?itok=PQI0SkzN)]
+]
+.pull-right[![](https://mitpress.mit.edu/sites/default/files/styles/large_book_cover/http/mitp-content-server.mit.edu%3A18180/books/covers/cover/%3Fcollid%3Dbooks_covers_0%26isbn%3D9780262518284%26type%3D.jpg?itok=PQI0SkzN)]
 .footnote[[Source](https://mitpress.mit.edu/books/raw-data-oxymoron)]
+
 ---
 class:inverse, middle, center
 # Vers une définition des données
 ---
 
 ## La pyramide Data-Information-Knowledge-Wisdom
-.pull-left[
-[![largeur](./img/DIKW_Pyramid.svg)](https://commons.wikimedia.org/w/index.php?curid=37705247)
-]
+
+.pull-left[[![largeur](./img/DIKW_Pyramid.svg)](https://commons.wikimedia.org/w/index.php?curid=37705247)]
 
 .pull-right[Attribuée à [Russell Ackoff](http://en.wikipedia.org/wiki/Russell_L._Ackoff), 1989
 
@@ -227,20 +246,20 @@ Les données peuvent être des :
 - symboles]
 
 ---
-# Vers une définition des données
-.pull-left.reduite2[
-![](img/kitchin.jpg)
-]
+## Vers une définition des données
+
+.pull-left.reduite2[![](img/kitchin.jpg)]
 .pull-right[
 > *Data are commonly understood to be the raw material produced by **abstracting the world** into categories, measures and other representational forms – numbers, characters, symbols, images, sounds, electromagnetic waves, bits – that constitute the **building blocks** from which information and knowledge are created.*
 
 ⏺ enregistrabilité
 
-🏗> briques de base ("*buildings blocks*")]
+🏗> briques de base ("*buildings blocks*")
+]
 
 ---
 class:middle
-# Data or capta ?
+## Data or capta ?
 
 > *Technically, then, what we understand as data are actually **capta** (derived from the Latin capere, meaning ‘to take’); those units of data that have been selected and harvested from the sum of all potential data.*
 
@@ -248,7 +267,7 @@ class:middle
 
 ---
 class:middle
-# Données ou obtenues ? 
+## Données ou obtenues ? 
 
 
 > « Décidément, on ne devrait jamais parler de “données”, mais toujours d’ “obtenues”. » 
@@ -258,10 +277,11 @@ Bruno Latour, 1993
 ---
 
 class:center, middle, inverse
-# Données, données... quelles données ?
+## Données, données... quelles données ?
 
 ---
 ## Données statistiques
+
 .pull-left[
 Différents types de variables : 
 
@@ -274,9 +294,8 @@ Différents types de variables :
   * d'intervalles : catégories ordonnées dont les valeurs successives sont séparées par des intervalles identiques (12-16°C / 16-20°C / 20-24 °C …)
 
 ]
-.pull-right[
-![](img/spread.png)
-]
+.pull-right[![](img/spread.png)]
+
 ---
 ## Données au sens large
 .pull-left[
@@ -289,9 +308,7 @@ Non numériques (directement): texte, image, vidéo, son...
   + analyse qualitative de données
   
 ]
-.pull-right[
-![](img/text_mining_intro_2.png)
-]
+.pull-right[![](img/text_mining_intro_2.png)]
 
 ---
 ## Exemple : les annotations en text mining
@@ -310,9 +327,7 @@ Des données dotées d'un modèle qui définit les relations entre les composant
   
   + Faciles à analyser, manipuler, visualiser...
 ]
-.pull-right[
-![](img/sql.jpeg)
-]
+.pull-right[![](img/sql.jpeg)]
 
 ---
 ## Données semi-structurées
@@ -323,27 +338,21 @@ Exemple : XML, JSON
 
 Possible de trier, ordonner et structurer les données
 ]
-.pull-right[
-![](img/OCDSjson.jpg)
-]
+.pull-right[![](img/OCDSjson.jpg)]
 
 ---
 ## Données non structurées
-.pull-left[Pas de structure commune identifiable
 
-Exemple : BDD NoSQL, logs
-
-Généralement qualitatives
-
-Difficilement combinées ou analysées quantitativement
+.pull-left[
+* Pas de structure commune identifiable
+* Exemple : BDD NoSQL, logs
+* Généralement qualitatives
+* Difficilement combinées ou analysées quantitativement
 
 Les données non structurées croitraient 15x plus que les données structurées
  
 Machine learning de + en + capable d'analyser ces données.]
-
-.pull-right[
-![](img/structured-vs-unstructured-data.png)
-]
+.pull-right[![](img/structured-vs-unstructured-data.png)]
 
 ---
 ## Données capturées, échappées, transitoires 
@@ -394,170 +403,41 @@ Des données sur les données. Peuvent être descriptives, structurelles ou admi
 ## Les données crowdsourcées
 .pull-left[Des données produites par des citoyens, des communs partagés et gouvernés par leurs producteurs
 
-
 Exemple : [OpenStreetMap](https://www.openstreetmap.org/query?lat=43.52367&lon=5.43256), le wiki de la carte]
+.pull-right[.reduite[![](img/osm.png)]]
 
-.pull-right[
-.reduite[![](img/osm.png)]
-]
 ---
 class:inverse, middle, center
 # De l'open data au big data
 
 ---
-## Open data : quelques jalons historiques
-![](img/chrono.png)
-
----
-# 07 Décembre 2007 : la rencontre de Sebastopol 
-.pull-left[
-👥 **Quoi ?** Une rencontre de l'Open Governement Group à Sebastopol (Californie), siège des éditions O'Reilly
-
-🎯 **Pourquoi ?** : Influencer le futur président des Etats Unis pour faire avancer l'open data
-
-📜 **Comment ?** En adoptant une déclaration définissant les grands principes de l'Open Government Data 
-
-
-]
-.pull-right[
-![](img/photofamille.jpg)
-]
----
-class:middle, center
-![](img/session.jpg)
-# Revue des principes
-
----
-class: middle, center
-
-# 1. Des données complètes
-### Toutes les données publiques doivent être rendues disponibles dans les limites légales liées à la vie privée ou la sécurité
----
-class: center, middle
-![](img/OPENDATA.jpg)
-# BY DEFAULT
----
-class: middle, center
-
-# 2. Des données primaires
-###  Les données ouvertes sont telles que collectées à la source, non-agrégées avec le plus haut niveau de granularité
-
----
-class: middle, center
-
-# 3. Des données fraiches (*timely*)
-### Les données doivent être disponibles dès qu'elles sont produites
-
----
-class: middle, center
-
-# 4. Des données accessibles 
-### Les données doivent être utilisables par le plus grand nombre d’usagers potentiels
-
----
-class: middle, center
-
-# 5. Des données exploitables par les machines 
-###  Les données peuvent être traitées automatiquement par les machines
-
----
-class: middle, center
-
-# 6.Des données non discriminatoires 
-### Elles peuvent être utilisées par tous sans réclamer un enregistrement préalable
----
-class: middle, center
-
-# 7. Des données dans un format ouvert
-### Ce format ne doit pas être la propriété d'une organisation en particulier (.xls) et doit être gouvernée par ses usagers
-
----
-class: middle, center
-
-# 8. Des données dans une licence ouverte
-### Idéalement dans le domaine public sinon dans une licence conforme à l'[Open Definition](www.opendefinition.org) : Licence Ouverte (CC-BY) ou ODBL (CC-BY-SA)
-
----
-# Défi 1 : la découvrabilité des données
-.pull-left[
-> Data findability is a major challenge. We have data portals and registries, but government agencies under one national government still publish data in different ways and different locations.(…)
-**Data findability is a prerequisite for open data to fulfill its potential and currently most data is very hard to find.** 
-]
-
-.pull-right[
-![](https://index.okfn.org/images/Datagapsclean.jpg)
-
-.footnote[https://index.okfn.org/insights/]
-]
-
----
-class:middle, center
-![](img/deception.gif) 
-
----
-# Défi 2 : le problème de la qualité
-.pull-left[
->**Government data is usually incomplete, out of date, of low quality, and fragmented.** In most cases, open data catalogues or portals are manually fed as the result of informal data management approaches. **Procedures, timelines, and responsibilities are frequently unclear among government institutions tasked with this work.**
-.footnote[http://opendatabarometer.org/4thedition/report/]
-]
-.pull-right[
-![](img/odb.png)
-]
-
----
-## Exemple de données ouvertes : la base SIRENE
-
-.reduite2[![](img/sirene.png)]
----
-#La base SIRENE : exemple de cas d'utilisation
-
-.reduite[.center[![](img/ruesoif.png)]]
----
-##Exemple de données ouvertes : la base adresses
-.reduite[.center[![](img/ban.png)]]
-
----
-##Exemple de données ouvertes : les accidents de la route
-.reduite[.center[![](img/accidents.png)]]
----
-#Les accidents de la route
-.reduite2[.center[![](img/trajetleplussur.png)]]
-.footnote[Plus d'accidents sur l'A8 mais surtout plus de véhicules…]
----
-#Les accidents de la route
-.reduite2[.center[![](img/marsactu.png)]]
-.footnote[[Carte par Joël Gombin dans Marsactu](https://joelgombin.github.io/marsactu_accidents/chronique.html)]
----
-## Exemple de données ouvertes : les inspections des restaurants
-.reduite2[.center[![](img/aliminfos.png)]]
-.footnote[[Résultats des contrôles officiels sanitaires : dispositif d'information « Alim’confiance »](https://www.data.gouv.fr/fr/datasets/resultats-des-controles-officiels-sanitaires-dispositif-dinformation-alimconfiance/)]
----
-#Les inspections des restaurants
-.reduite2[.center[![](img/resto.png)]]
-.footnote[[26 établissements au niveau d'hygiène à corriger de manière urgent ](https://dgal.opendatasoft.com/explore/embed/dataset/export_alimconfiance/map/?disjunctive.app_libelle_activite_etablissement&disjunctive.filtre&refine.synthese_eval_sanit=A%20corriger%20de%20mani%C3%A8re%20urgente&location=6,47.24195,5.00977&static=false&datasetcard=true)]
-
----
 ## Big data
 ![](http://www.usine-digitale.fr/mediatheque/0/3/5/000351530/big-data.jpg)
+
+
 ---
-# L'obsession du volume de données
+## L'obsession du volume de données
+
 .pull-left[
 **Quelques chiffres omniprésents** : 
 - le volume de données produit double tous les 3 ans (Gantz & Reisel 2011)
 - 90% des données créées dans les deux dernières années (IBM 2012)
-- 40% : croissance annuelle de la production de données (Maniyka et al. 2011) 
+- 40% : croissance annuelle de la production de données (Maniyka et al. 2011)
+]
+.pull-right[![](img/whybig.png)]
+
+---
+## L'obsession du volume de données
 
 **Problèmes de cette approche** : 
 - Estimations guidées par des intérêts commerciaux
 - Ne définit pas ce que sont ces données
 - Résume le big data au Volume
--Explique mal la mise en données du monde
-]
-.pull-right[
-![](img/whybig.png)
-]
+- Explique mal la mise en données du monde
+
 ---
-# Les promesses du big data
+## Les promesses du big data
+
 Kitchin (2014) résume les promesses du big data : 
 - **“Governing people”** : dans la continuité de la statistique, améliorer la connaissance de l’administration et prédire les crimes
 
@@ -569,23 +449,19 @@ Kitchin (2014) résume les promesses du big data :
 
 - **Un nouveau paradigme scientifique** : une nouvelle ère guidée par les corrélations
 
-
 ---
 ## Linked data
 .pull-left[
-- poussé par W3C et Tim Berners-Lee
-
-- Web sémantique / web des données
-
-- RDF / SPARQL
-
-- wikidata => http://projetjourdain.org/network/index.html]
-
-.pull-right[
-![](http://linkeddata.org/static/images/lod-datasets_2009-07-14_cropped.png)
+* poussé par W3C et Tim Berners-Lee
+* Web sémantique / web des données
+* RDF / SPARQL
+* wikidata => http://projetjourdain.org/network/index.html
 ]
+.pull-right[![](http://linkeddata.org/static/images/lod-datasets_2009-07-14_cropped.png)]
+
 ---
 [![](img/histro.png)](http://histropedia.com/timeline/3jrttpg9bg0t/Google)
+
 ---
 ## API
 .pull-left[
@@ -596,234 +472,27 @@ Kitchin (2014) résume les promesses du big data :
 - donnée dynamique => ouverture potentiellement limitée et contrôlée 
 
 - un exemple : [overpass turbo](https://overpass-turbo.eu/)]
-.pull-right[
-![](https://d1avok0lzls2w.cloudfront.net/img_uploads/apis-for-marketers.png)
-]
----
-class:inverse, middle, center
-# Cadre juridique et protection de la vie privée
-
-### Focus sur le RGPD
-
----
-# Répondre à la faiblesse du cadre juridique existant
-
-.center.reduite2[
-![](https://cdn2.nextinpact.com/images/bd/news/medium-167383.png)
-]
----
-# Le RGPD ? 
-
-**Réglement Général de Protection des Données** : adopté à la mi-avril 2016 après 4 années de débat, il va considérablement renforcer le droit européen de protection des données personelles
-
-3 objectifs : 
-- Renforcer les droits des personnes
-
-- Responsabiliser les acteurs traitant des données personnelles
-
-- Crédibiliser la régulation
-
-Le RGPD propose un **cadre unifié pour l'ensemble de l'UE** qui s'applique à chaque fois qu'un résident européen est visé par un traitement de données personnelles. 
-
----
-# Renforcer les droits des personnes
-.pull-left[
-
-![](https://www.cnil.fr/sites/default/files/styles/contenu_generique_push_2_colonnes/public/thumbnails/image/portabilite.gif?itok=Hw44RwAk)
-**Droit à la portabilité des données** : Droit de recevoir ses données "dans un format structuré, couramment utilisé et lisible par machine" et de les transmettre à un autre service si possible de matière automatisée
-]
-.pull-right[
-![](https://www.cnil.fr/sites/default/files/styles/contenu_generique_push_2_colonnes/public/thumbnails/image/transparence_0.gif?itok=__ElfCYA)
-**Transparence et consentement explicite** : plus de lisibilité sur ce qui est fait de mes données (preuve de consentement explicite dans des termes clairs) et j’exerce mes droits plus facilement (droit d’accès, droit de rectification, droit à l'oubli).
-]
-.footnote[Source : [CNIL](https://www.cnil.fr/fr/plus-de-droits-pour-vos-donnees)]
-
----
-## Exemple de demande de consentement explicite
-
-.center.reduite2[
-![](img/soge.jpeg)
-]
----
-# Renforcer les droits des personnes
-.pull-left[
-![](https://www.cnil.fr/sites/default/files/styles/contenu_generique_push_2_colonnes/public/thumbnails/image/protection-mineur.gif?itok=eKkC1eTx)
-**Protection des mineurs** : Les services en ligne doivent obtenir le consentement des parents des mineurs de moins de 16 ans avant leur inscription.
-
-]
-.pull-right[
-![](https://www.cnil.fr/sites/default/files/styles/contenu_generique_push_2_colonnes/public/thumbnails/image/guichet-unique.gif?itok=_LRvPqGJ)
-**Guichet unique** : En cas de problème, je m’adresse à l’autorité de protection des données de mon pays, quelque soit le lieu d’implantation de l’entreprise qui traite mes données.
-]
-.footnote[Source : [CNIL](https://www.cnil.fr/fr/plus-de-droits-pour-vos-donnees)]
-
----
-# Renforcer les droits des personnes
-.pull-left[
-![](https://www.cnil.fr/sites/default/files/styles/contenu_generique_push_2_colonnes/public/thumbnails/image/sanction.gif?itok=zJEPHJLr)
-**Sanctions renforcées** : En cas de violation de mes droits, l’entreprise responsable encourt une sanction pouvant s’élever à 4% de son chiffre d’affaires mondial.
-
-]
-.pull-right[
-![](https://www.cnil.fr/sites/default/files/styles/contenu_generique_push_2_colonnes/public/thumbnails/image/droit-oubli.gif?itok=eLolCmSf)
-**Droit à l'oubli** : Je peux demander à ce qu’un lien soit déréférencé d’un moteur de recherche ou qu’une information soit supprimée s’ils portent atteinte à ma vie privée.
-]
-.footnote[Source : [CNIL](https://www.cnil.fr/fr/plus-de-droits-pour-vos-donnees)]
----
-## Responsabiliser les acteurs traitant des données personnelles
-.pull-left[
-Principes : 
-
-- **Privacy by design** : protection des données personnelles dès la conception du produit et par défaut
-- **Minimisation** : limiter la quantité de données personnelles dès le départ
-- **Accountability** : mettre en place des mesures de protection des données et démontrer cette conformité à tout moment
-- Fin des obligations déclaratives sauf si risque accru pour la vie privée
-]
-.pull-right[
-![](https://www.genious-interactive.com/wp-content/uploads/2017/10/protection-donnees-9-mois-pour-etre-conforme-rgpd.png)
-]
-
----
-# Les 6 étapes de la mise en conformité
-.pull-left[
-![](https://www.cnil.fr/sites/default/files/styles/contenu-generique-visuel/public/thumbnails/image/rgpd-etape6.png)
-]
-
-.pull-right[
-1. **Désigner un pilote** : Délégué à la Protection des Données (Data Protection Officer) exerce une mission d’information, de conseil et de contrôle en interne. 
-2. **Cartographier** : élaboration d'un registre des traitements des données personelles
-3. **Prioriser** : sur la base du registre, identifiez les actions à mener en priorité pour se conformer aux obligations actuelles et à venir. 
-]
-.footnote[ℹ DPO obligatoire uniquement pour secteur public et entreprises dont le traitement de données sensibles à grande échelle est une activité principale. ]
----
-# Les 6 étapes de la mise en conformité
-.pull-left[
-4. **Gérer les risques** : Si identification de risques élevés, mener pour chaque traitement concerné une analyse d'impact sur la protection des données (PIA). 
-
-5. **S'organiser** : mise en place de procédures pour l’ensemble des événements qui peuvent survenir au cours de la vie d’un traitement (ex : faille de sécurité, demande de rectification, changement de prestataire…)
-
-6. **Documenter** :  prouver votre conformité au règlement, constituer et regrouper la documentation nécessaire qui doit être réexaminée régulièrement.  
-]
-
-.pull-right[
-
-![](https://www.cnil.fr/sites/default/files/styles/contenu-generique-visuel/public/thumbnails/image/rgpd-etape6.png)
-
-]
----
-# Crédibiliser la régulation
-
-⚖️ Les autorités de protection peuvent notamment : limiter temporairement ou définitivement un traitement, suspendre les flux de données, ordonner la rectification, la limitation ou l'effacement des données…
-
-🔫 Amendes : jusqu'à 10 ou 20 millions d’euros, ou, dans le cas d’une entreprise, de **2% jusqu’à 4% du  chiffre d'affaires annuel mondial**, le montant le plus élevé étant retenu.
-
-🇪🇺
-Sanction sera **conjointement adoptée entre l’ensemble des autorités concernées**, donc potentiellement pour le territoire de toute l’Union européenne.
-
----
-class:inverse, middle, center
-# Modèles économiques de l'open data et du big data
-
----
-# Les 3 facettes de la valeur des données
-.pull-left[
-- La donnée comme **matière première** : revendue par celui qui la collecte ou l’agrège
-
-- la donnée comme **levier** : utilisée sans marchandisation, par exemple pour réduire les coûts ou développer les revenus 
-
-- la donnée comme **actif stratégique** : une arme pour prendre pied sur un marché, ou défendre son positionnement]
-
-.pull-right[.reduite2[![](https://i0.wp.com/www.fypeditions.com/wp-content/uploads/2014/10/couv-datanomics.gif?resize=404%2C601)]]
-
-
----
-## Les data brokers : la vie privée comme matière première
-
-- 👻 Des entreprises inconnues du grand public : **Acxiom, Epsilon, Experian**
-
-- 💰 Un marché estimé par le Congrès américain à 156 milliards de dollars en 2012
-
-- 🕵 "Data brokers are worse than the NSA" (Sénateur Rockefeller) : aucune transparence ni véritable régulation aux US
-
-- 🔍 En moyenne, 200 points de données sur chaque individu aux Etats Unis. Plus de 50 000 sources. 
-
-- 🚰 Sources : données publiques (permis de construire, registres des naissances, casiers judiciaires…), cookies, données d'achat, cartes de fidélité, données téléphoniques, recherches en ligne…
-
----
-# Une dépossession de la vie privée
-.pull-left[
-> "*Data brokers take public and private information, aggregate it into products and monetize it. *[…]
-
-> *"Through the combination of data possession and innovation, data brokers **claim ownership of our data.**"*
-]
-.pull-right[
-.reduite2[![](https://ideasonfire.net/wp-content/uploads/2018/02/Healthcare-and-Big-Data-Mary-Ebeling.png)]
-
-]
----
-# La donnée comme levier
-.pull-left[- Utiliser les données **pour son propre compte** sans monétisation directe auprès d'un tiers
-
-- Données : leviers pour mieux allouer ressources ou développer le résultat
-
-- Possibilité de compléter ou développer le modèle d'affaires]
-.pull-right[
-![](https://www.thedailybanner.com/wp-content/uploads/2017/10/CAMBRIDGE-ANALYTICA.png)
-]
----
-# La donnée comme actif stratégique
-.pull-left[
-Utiliser des données pour soutenir un modèle économique, acquérir ou défendre une position au sein d'un écosystème
-]
-.pull-right[
-![](http://www.optasports.fr/ImageGen.ashx?image=/media/456897/broadcast.jpg&width=646&height=294)
-]
----
-class:inverse, middle, center
-# Analyse de modèle économiques d'entreprises de la data
----
-# Lisons cet article de Wired sur Foursquare
-
-[.reduite2[![](img/wired.png)]](https://www.wired.com/2016/01/foursquares-plan-to-use-your-data-to-make-money-even-if-you-arent-a-user/)
----
-## Remplissons ensemble le business model canvas
-
-.reduite2[
-[![](img/canva.png)](https://frama.link/bmcanvas)
-]
-
-https://frama.link/bmcanvas
-
-
----
-class:inverse, middle, center
-
-# Merci !
-
-## Evaluation de la journée
+.pull-right[![](https://d1avok0lzls2w.cloudfront.net/img_uploads/apis-for-marketers.png)]
 
 ---
 class: middle, center
 
-# Jour 2 : 
+# Partie 2 : 
 # ouvrir la boite noire de la data science
-
 
 ---
 class:middle
-# Programme de la matinée
+## Programme
 
 - Qu'est-ce que la data science ?
-- Workshop 4 : quelles compétences recruter dans un projet de data science ?
 - Le data pipeline : acquérir les données, les vérifier, les nettoyer, les analyser, les présenter
 
 ---
 class:middle
-# Programme de l'après midi
+## Bonus
 
-- Workshop 5 : data visualisation : quel format et quel outil choisir pour quelle fonction ?
+- Data visualisation : quel format et quel outil choisir pour quelle fonction ?
 - Modéliser pour prédire : introduction au machine learning et deep learning
-- Workshop 6 : décortiquons quelques algorithmes notoires
 
 ---
 class: middle, center, inverse
@@ -918,7 +587,9 @@ class:inverse, center, middle
 ---
 ## Que fait-on une fois qu'on a des données ?
 
-- Exploratory Data Analysis (Tukey, 1977) : pas d'hypothèse préalable à tester, plutôt pour générer des hypothèses. Rôle de la datavisualisation 
+- Exploratory Data Analysis (Tukey, 1977)
+  * pas d'hypothèse préalable à tester, plutôt pour générer des hypothèses
+  * rôle de la datavisualisation
 
 - test d'hypothèse
 
@@ -930,56 +601,20 @@ class:inverse, center, middle
 ---
 ## Que fait-on une fois qu'on a des données ?
 
-- Exploratory Data Analysis (Tukey, 1977) : pas d'hypothèse préalable à tester, plutôt pour générer des hypothèses. Rôle de la datavisualisation 
+.reduite[.center[![](./img/Type-I-and-II-errors.jpg)]]
+
+https://www.nutritiontactics.com/strength-training-studies-underpowered-ironic-muscle-hypertrophy-stats-explained/
+
+---
+## Que fait-on une fois qu'on a des données ?
+
+- Exploratory Data Analysis (Tukey, 1977)
+  * pas d'hypothèse préalable à tester, plutôt pour générer des hypothèses
+  * rôle de la datavisualisation
 
 - test d'hypothèse
 
 - **modèle**
-
----
-class: inverse, center, middle
-
-# Workshop 4 : quelles compétences recruter dans un projet de data science ?
-
-
----
-class: center, middle
-
-
-![](./img/competences1.png)
-
-
-(source : http://fing.org/?Les-competences-Data)
-
-
----
-
-class: center, middle
-
-![](./img/competences2.png)
-
-
----
-class: center, middle
-
-![](./img/competences3.png)
-
-
----
-class: center, middle
-
-![](./img/competences4.png)
-
-
----
-class: center, middle
-
-![](./img/competences5.png)
-
----
-class: center, middle
-
-À vous : de quelles compétences data avez-vous besoin pour votre projet data ? 
 
 ---
 class: center, middle, inverse
@@ -990,39 +625,29 @@ class: center, middle, inverse
 ---
 ## Bases de données
 
-Marché de ~ 25 milliards de $
+Marché de ~ 25 milliards USD
 
-Oracle, Microsoft... MySQL, PostgreSQL, SQLite...
+* géants historiques: Oracle, Microsoft
 
-DB orientées colonnes : MonetDB...
+* MySQL, PostgreSQL, SQLite...
 
-NoSQL : MongoDB, CouchDB, BigTable (Google), Neo4j, Redis...
+* BDD orientées colonnes : MonetDB...
 
----
-## Bases de données distribuées
-
-Hadoop / Cloudera 
-
-=> MapReduce et HDFS
+* BDD NoSQL : MongoDB, CouchDB, BigTable (Google), Neo4j, Redis...
 
 ---
-## Hadoop
+## Bases de données distribuées : Hadoop / MapReduce
 
-[![](./img/bigdata.jpeg)](https://www.chrisstucchio.com/blog/2013/hadoop_hatred.html)
+* Framework Hadoop / Cloudera, basé sur :
+  * HDFS (Hadoop Distributed File System) pour le stockage et
+  * MapReduce pour le calcul
+* Alternative: Apache Spark travaille en mémoire vive => 10 à 100x plus rapide que Hadoop
 
-Voir aussi http://ismydatabig.com/
 
----
-## Hadoop / MapReduce
+$+$ : Permet une réelle scalabilité (ajoutons des nœuds)
 
-Permet une réelle scalabilité (ajoutons des nœuds), MAIS contraint fortement les algorithmes pouvant être utilisés, qui doivent être parallélisables. Ex : ACP => c'est compliqué
-
----
-## Spark
-
-Principe similaire à Hadoop, mais travaille en mémoire vive de manière non séquentielle
-
-De 10 à 100x plus rapide que Hadoop
+$-$ : Contraint fortement les algorithmes pouvant être utilisés, qui doivent être parallélisables
+(ex : Analyse en Composantes Principales => c'est compliqué)
 
 ---
 ## Langages
@@ -1037,7 +662,32 @@ De 10 à 100x plus rapide que Hadoop
 - ...
 
 ---
-## Une carte interactive 
+## Logiciels d'analyse et de visualisation de données
+
+* BI: Tableau (racheté par Salesforce 2019/08)
+
+* Data science: Dataiku
+
+* Machine Learning: Azure Machine Learning Studio de Microsoft
+
+---
+## La révolution par le GPU
+
+* L'explosion du deep learning repose en partie sur l'exploitation de cartes graphiques puissantes (GPU) développées à l'origine pour les jeux vidéo et la modélisation 3D
+
+* Nvidia, leader mondial des GPU, développe maintenant aussi des bibliothèques de data science / dataviz ("Open GPU Data Science"): https://rapids.ai/
+  * entre 10x et 1000x plus rapide (!) selon les algorithmes
+
+.reduite[.center[![](./img/RAPIDS-logo-white.png)]]
+
+---
+## La révolution par le GPU
+
+.reduite[.center[![](./img/rapids_arrow.png)]]
+
+
+---
+## Bonus: Une carte interactive 
 
 http://xyz.insightdataengineering.com/blog/pipeline_map.html
 
@@ -1108,7 +758,9 @@ Importance d'un sanity check
 
 ???
 
-Paradigme du *tidy data* 
+Paradigme du *tidy data*
+
+OpenRefine
 
 ---
 ## Analyser les données
@@ -1132,12 +784,449 @@ etc.
 
 class: inverse, center, middle
 
-# Workshop 5 : Introduction à la data visualisation
+# Pratique: Transparence Santé
+
+---
+
+## Transparence Santé
+
+.reduite[.center[![<https://www.transparence.sante.gouv.fr/>](img/transparence-sante-home.png)]]
+
+---
+
+### Exploration du jeu de données
+
+Lien direct: <https://www.transparence.sante.gouv.fr/exports-etalab/exports-etalab.zip>
+
+* Combien d'entreprises déclarantes?
+
+* Combien d'avantages, conventions, rémunérations ?
+
+---
+### Outils Unix
+
+```sh
+# nb entreprises
+head -n 5 ~/datasets/transparence-sante/2018-11-24/entreprise_2018_11_24_04_00.csv
+wc -l ~/datasets/transparence-sante/2018-11-24/entreprise_2018_11_24_04_00.csv
+# nb avantages
+head -n 5 ~/datasets/transparence-sante/2018-11-24/declaration_avantage_2018_11_24_04_00.csv
+wc -l ~/datasets/transparence-sante/2018-11-24/declaration_avantage_2018_11_24_04_00.csv
+# id. conventions et remunerations
+```
+
+Au 24 novembre 2018:
+* entreprises: 2.812
+* avantages: 9.604.936
+* conventions: 4.123.166
+* rémunérations: 280.981
+
+---
+## Alternative: miller
+
+<https://github.com/johnkerl/miller>
+
+> Miller is like awk, sed, cut, join, and sort for name-indexed data such as CSV, TSV, and tabular JSON.  
+> Miller is multi-purpose: it’s useful for data cleaning, data reduction, statistical reporting, devops, system administration, log-file processing, format conversion, and database-query post-processing.  
+> Miller complements data-analysis tools such as R, pandas, etc.: you can use Miller to clean and prepare your data. While you can do basic statistics entirely in Miller, its streaming-data feature and single-pass algorithms enable you to reduce very large data sets.
+
+<https://johnkerl.org/miller/doc/index.html>
+
+Installation:
+```sh
+apt-get install miller
+```
+
+---
+## Exploration avec miller
+```sh
+# nb entreprises
+mlr --csv cat -n then tail -n 1 ~/datasets/transparence-sante/2018-11-24/entreprise_2018_11_24_04_00.csv
+# nb avantages
+mlr --csv --ifs ';' cat -n then tail -n 1 ~/datasets/transparence-sante/2018-11-24/declaration_avantage_2018_11_24_04_00.csv
+# id. conventions et remunerations
+```
+
+* entreprises: 2.812
+* avantages: 9.604.485
+* conventions: 4.120.314
+* rémunérations: 280.940
+
+---
+## `wc -l != mlr cat -n` ?
+
+* `wc -l` compte les caractères `\n` (attention si la dernière ligne d'un fichier ne se termine pas par ce caractère!) ;
+`cat -n` compte les lignes, séparées par `\n`.
+
+* `mlr cat -n` compte les entrées, champ par champ, en tenant compte des guillements doubles utilisés pour protéger certaines valeurs textuelles.
+
+Donc?
+
+---
+## `wc -l != mlr cat -n` !
+* Certains champs de texte libre contiennent du texte incluant des `\n` (multiline strings).
+
+```sh
+grep -A1 --color=always ';"[^";]*$' ~/datasets/transparence-sante/2018-11-24/declaration_avantage_2018_11_24_04_00.csv|less
+```
+
+---
+
+## Exploration avec pandas
+```python
+import pandas as pd
+df_a = pd.read_csv("~/datasets/transparence-sante/2018-11-24/declaration_avantage_2018_11_24_04_00.csv", sep=';')
+df_a.shape
+# (9604485, 36)
+```
+
+Pourquoi ne pas utiliser directement pandas?
+
+---
+## miller vs pandas: CPU
+
+```sh
+time mlr --csv --ifs ';' cat -n then tail -n 1 ~/datasets/transparence-sante/2018-11-24/declaration_avantage_2018_11_24_04_00.csv
+# 38,53s user 1,10s system 99% cpu 39,636 total
+```
+
+```python
+from time import time
+t0 = time() ; df_a = pd.read_csv("~/datasets/transparence-sante/2018-11-24/declaration_avantage_2018_11_24_04_00.csv", sep=';') ; t1 = time() ; print(t1 - t0)
+# 53.411545515060425
+```
+
+---
+## miller vs pandas: RAM
+
+```sh
+/usr/bin/time -v mlr --csv --ifs ';' cat -n then tail -n 1 ~/datasets/transparence-sante/2018-11-24/declaration_avantage_2018_11_24_04_00.csv
+# Maximum resident set size (kbytes): 2754560
+# soit environ 2.6 GB
+```
+
+```python
+df_a.info(memory_usage='deep')
+# dtypes: int64(1), object(35)
+# memory usage: 18.3 GB
+```
+
+---
+## pandas: moins de RAM
+
+Pour chaque colonne, un autre dtype est-il possible?
+```python
+# nb valeurs non nulles, nb uniques,
+# valeur la plus fréquente et sa fréquence
+df_a.describe(include='all').transpose()[['count', 'unique', 'top', 'freq']]
+```
+15 colonnes contiennent beaucoup d'occurrences d'un nombre restreint de valeurs distinctes.
+Sémantiquement, elles semblent correspondre à des **variables catégorielles**.
+
+---
+## pandas: dtypes
+
+```python
+cols_desc = df_a.describe(include='all').transpose()[['count', 'unique', 'top', 'freq']]
+```
+
+```python
+cat_cols = cols_desc[cols_desc['unique'] < 100].index.values.tolist()
+cat_dtypes = {x: 'category' for x in cat_cols}
+df_a = df_a.astype(cat_dtypes, copy=False)
+# verif memoire
+df_a.info(memory_usage='deep')
+# dtypes: category(15), int64(1), object(20)
+# memory usage: 9.9 GB
+```
+
+---
+## pandas: dump dtypes
+
+`read_csv` a un argument optionnel qui permet de spécifier le dtype d'une ou plusieurs colonnes.
+L'inférence de type est désactivée pour ces colonnes.
+
+```python
+# on exporte dans un json le dtype des colonnes pour
+# éviter (à soi ou aux autres) de refaire ce travail
+# préliminaire
+import json
+col_dtypes = df_a.dtypes.astype(str).to_dict()
+with open('data/avantage_dtypes.json', mode='w') as f:
+    json.dump(col_dtypes, f)
+```
+
+---
+## pandas: `read_csv(dtype=...)`
+
+Nouvelle session:
+```python
+import pandas as pd
+import json
+# lecture des dtypes
+with open('data/avantage_dtypes.json', mode='r') as f:
+    col_dtypes = json.load(f)
+df_a = pd.read_csv("declaration_avantage_2018_11_24_04_00.csv", sep=';', dtype=col_dtypes)
+```
+
+---
+## pandas: et pour les autres colonnes?
+
+```python
+df_a.describe(include='object').transpose()[['count', 'unique', 'top', 'freq']]
+```
+* variables catégorielles intéressantes (RAM) si unique << count
+  - toutes sauf `ligne_identifiant`, `avant_convention_lie`, `benef_denomination_sociale`?
+
+* `entreprise_identifiant` est sûrement une clé étrangère (table des entreprises) ; `denomination_sociale` doit correspondre également
+
+* `benef_adresse{1..4}` sont à interpréter ensemble
+
+```python
+df_a = df_a.astype({'entreprise_identifiant': 'category', 'denomination_sociale': 'category'}, copy=False)
+# [...] memory usage: 8.8 GB
+# etc.
+df_a['avant_date_signature'] = pd., format='%d/%m/%Y')
+```
+
+---
+## pandas: dates
+
+`avant_date_signature` doit être une date, utilisons le dtype adéquat:
+```python
+df_a['avant_date_signature'] = pd.to_datetime(df_a['avant_date_signature'], format='%d/%m/%Y')
+# OutOfBoundsDatetime: Out of bounds nanosecond timestamp: 17-10-17 00:00:00
+# solution: errors='coerce' ou errors='ignore'
+```
+
+```sh
+mlr --csv --ifs ';' grep "17/10/0017" then cat -n ~/datasets/transparence-sante/2018-11-24/declaration_avantage_2018_11_24_04_00.csv
+```
+
+---
+## Problème de qualité 1: valeurs incorrectes
+
+* 30 entrées contiennent cette date erronée, toutes pour des repas offerts par les laboratoires Servier à des cardiologues de différents hôpitaux (le 17/10/2017?).
+
+* Explications possibles (+/- optimistes): erreurs de saisie indépendantes, erreurs de saisie liées (événement? saisie groupée?) ; les dates déclarées correctes en apparence sont-elles fiables?
+
+* Autre exemple: `benef_ville`="MARSEILLLE"
+
+---
+## Problème de qualité 2: valeurs de remplissage
+
+```python
+df_a["benef_identifiant_valeur"].value_counts()
+```
+
+* Les valeurs les plus fréquentes ressemblent à de faux identifiants ou des valeurs de remplissage: [SO], SO (sans objet?), 0, [AUTRE], 10000000000, 00000000000, `BENEF_IDENTIFIANT_VALEUR`, [BR], NON RENSEIGNE, [0], 9999, `.`, INFORMATION NON DISPONIBLE, 10000000001, MANIPULATEUR EN RADIOLOGIE.
+
+* Vérification manuelle: "508331303" est un SIREN valide (ok).
+
+---
+## Bilan du jeu de données
+
+* Volumétrie importante: > 13 millions d'entrées
+
+* Forte hétérogénéité et faible qualité dues à:
+  - mode de déclaration (peu de contrôles à la soumission),
+  - nombre d'entreprises déclarantes (> 2.800).
+
+---
+class: inverse, center, middle
+
+# Travailler avec des données "sales"
+
+---
+
+## Data: the good, the bad...
+
+.reduite[.center[![](img/tidy-9.png)]]
+
+.reduite[.center[![](img/tidy-8.png)]]
+
+---
+
+## Tidy data
+
+> "Happy families are all alike; every unhappy family is unhappy in its own way." –– Leo Tolstoy
+
+> "Tidy datasets are all alike, but every messy dataset is messy in its own way." –– Hadley Wickham
+
+.reduite[.center[![https://r4ds.had.co.nz/introduction.html](./img/data-science.png)]]
+
+---
+
+## Tidy data: références
+
+.reduite[.center[![](img/cover.png)]]
+
+* Wickham, Hadley, and Garrett Grolemund. R for data science: import, tidy, transform, visualize, and model data. " O'Reilly Media, Inc.", 2016.
+  - disponible gratuitement en ligne: <https://r4ds.had.co.nz/>
+  - chapitre "Tidy Data": <https://r4ds.had.co.nz/tidy-data.html>
+
+---
+
+## Tidy data: références
+
+.reduite[.center[![](img/tidy-data.png)]]
+* Hadley Wickham. Tidy data. The Journal of Statistical Software, vol. 59, 2014.
+  - <http://vita.had.co.nz/papers/tidy-data.html>
+
+---
+## Data: ... and the ugly
+
+.reduite[.center[![](img/ugly1.png)]]
+
+---
+## Data: ... and the ugly (bis)
+
+.reduite[.center[![](img/ugly2.png)]]
+
+---
+
+## Rendre les données exploitables pour la dataviz
+
+Lisa Charlotte Rost: "How to prepare your data for analysis and charting in Excel & Google Sheets"
+
+https://blog.datawrapper.de/prepare-and-clean-up-data-for-data-visualization/
+
+---
+
+## OpenRefine
+<http://openrefine.org>
+
+Outil de correction semi-automatique itératif:
+
+* travail par facettes/filtres
+
+* heuristiques de clustering: collision de clés, plus proches voisins (plusieurs variantes pour chacune)
+
+* on sélectionne les fusions à réaliser
+
+* plus éventuellement données externes (wikidata)
+
+=> Produire rapidement une version corrigée d'un jeu de données (corrections simples).
+
+---
+
+## Conclusion
+* Les problèmes de qualité sont un frein majeur à la publication et à la réutilisation de données (ouvertes).
+
+* Ils sont issus du **travail invisibilisé de production des données**, dont on retrouve quelques traces dans la documentation et dans les données elles-mêmes.
+
+* L'exploitation de jeux de données "sales" nécessite leur nettoyage manuel ou semi-automatique (utilisation d'outils de correction comme OpenRefine)
+
+---
+class: inverse, center, middle
+
+# Travailler avec des données non-structurées
+
+---
+
+## Données non structurées
+
+* Fichiers textes et documents (.doc, .pdf, .html, .ppt)
+* Courriels
+* Données issues des réseaux sociaux
+* Images
+* Fichiers sons
+* Vidéos
+* Logs de serveurs, sites, applications
+
+Comment extraire les nombreuses informations contenues dans ces données non-structurées?
+
+---
+## Difficultés
+
+.reduite[.center[![<https://xkcd.com/1425/>](./img/tasks.png)]]
+
+<!-- In the 60s, Marvin Minsky assigned a couple of undergrads to spend the summer programming a computer to use a camera to identify objects in a scene. He figured they'd have the problem solved by the end of the summer. Half a century later, we're still working on it. -->
+
+---
+## Branches de l'IA
+
+* Vision par ordinateur (Computer Vision)
+  - détection d'objet (Object Detection)
+  - reconnaissance optique de caractères (Optical Character Recognition)
+
+* Traitement automatique du langage naturel (Natural Language Processing)
+
+Progrès de la recherche dans ces branches de l'IA => amélioration des performances des systèmes
+
+---
+## Panama papers
+
+* 11.4 M fichiers, 2.6 To données
+* "Soit plusieurs décennies de lecture jour et nuit si l’on veut aller d’un bout à l’autre de la base de données – sans compter la complexité de certains dossiers."
+
+.reduite[.center[![<https://www.lemonde.fr/panama-papers/article/2016/04/03/panama-papers-comment-le-monde-a-travaille-sur-plus-de-11-millions-de-fichiers_4894836_4890278.html>](img/lemonde-panama.png)]]
+
+---
+## Stack technique ICIJ
+
+* extraction du texte par OCR avec Tesseract,
+* recherche de termes avec Talend,
+* indexation des résultats avec Apache Solr,
+* tokenization, filtrage, stemming, clustering de termes avec RapidMiner,
+* classification automatique de documents avec RapidMiner.
+
+<https://www.icij.org/blog/2018/08/how-machine-learning-is-revolutionizing-journalism/>
+
+---
+## Limites
+
+* Données:
+  - Fautes d'orthographe
+  - Variations de la graphie
+* Masse de données à analyser:
+  - Filtrer les documents peu intéressants,
+  - Stratégies de classification plus élaborée,
+* Systèmes:
+  - Erreurs d'OCR
+  - Erreurs de NER
+  - NB: erreurs en cascade => effet multiplicatif
+
+---
+## Data pipeline
+
+.reduite[.center[![<https://xkcd.com/2054/>](img/data_pipeline.png)]]
+
+---
+## Named Entity Recognition
+
+Schéma d'annotation des dumps Wikipedia:
+
+* PER:	Named person or family.
+* LOC:	Name of politically or geographically defined location (cities, provinces, countries, international regions, bodies of water, mountains).
+* ORG:	Named corporate, governmental, or other organizational entity.
+* MISC:	Miscellaneous entities, e.g. events, nationalities, products or works of art.
+
+D'autres schémas d'annotation plus détaillés existent.
+
+Vous pouvez élaborer vos propres schémas d'annotation métier, dérivés ou non de schémas standard, et annoter des données.
+
+---
+
+## Annotation de données avec Prodigy
+
+.reduite[.center[![](./img/prodigy.png)]]
+
+<https://prodi.gy>
+
+---
+
+class: inverse, center, middle
+
+# Workshop : Introduction à la data visualisation
 
 [datactivist
 .coop/odl_paca](https://datactivist.coop/odl_paca)
 
+---
+class: center, middle, inverse
 
+# Modéliser
 
 ---
 ## Pourquoi modéliser ?
@@ -1324,34 +1413,11 @@ Compromis entre intelligibilité et fidélité aux données
 
 https://gallery.shinyapps.io/LDAelife/
 
-
----
-class: inverse, center, middle
-# Workshop 6 : décryptons quelques algorithmes
-
-
----
-## Décryptons quelques algorithmes
-
-- choisissez un cas d'usage
-- quelles données utilisées ?
-- connait-on l'algorithme utilisé ?
-- que fait l'algorithme des données ?
-- est-on capable d'expliquer les décisions prises par l'algorithme ?
-- quels biais et limites l'algorithme présente-t-il ?
-- où est la valeur ? Dans l'algorithme ou dans les données ?
-- qui crée cette valeur ?
-- etc. 
-
----
-## Décryptons quelques algorithmes
-
-Le cas d'APB, [décrypté par Cédric Villani](http://www.lemonde.fr/idees/article/2017/12/06/cedric-villani-ce-qui-a-bugge-dans-apb-ce-n-est-pas-le-logiciel-mais-bien-l-etat_5225204_3232.html)
-
-
 ---
 class: inverse, center, middle
 
 # Merci !
 
-## Évaluation de la journée
+#<mathieu@datactivist.coop>
+
+# Évaluation de  la formation
